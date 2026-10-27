@@ -1,0 +1,64 @@
+---
+const blurbs = [
+  { title: 'CDC mastery', line: 'Clock-domain crossing patterns, handshakes, and failure modes in practice.' },
+  { title: 'HFT learning', line: 'Low-latency FPGA techniques for market-data style datapaths.' },
+  { title: 'Master timing / CDC', line: 'Static timing closure with multi-clock constraints and false-path hygiene.' },
+  { title: 'Pipelining', line: 'Throughput vs latency trade-offs in RTL pipelines.' },
+  { title: 'FPGA architecture', line: 'How fabric, BRAM, DSP, and IO blocks shape a design.' },
+  { title: 'Two-clock drift', line: 'Measuring and reasoning about independent oscillator drift.' },
+];
+---
+<section class="section" id="projects">
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
+    <p class="section-lead">
+      Short blurbs for learning and supporting work. Detail pages may land later; private HDL stays private.
+    </p>
+    <div class="blurb-grid">
+      {blurbs.map((b) => (
+        <article class="blurb">
+          <h3>{b.title}</h3>
+          <p>{b.line}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .blurb-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.9rem;
+  }
+
+  .blurb {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem 1.05rem;
+  }
+
+  .blurb h3 {
+    margin: 0 0 0.35rem;
+    font-size: 1rem;
+  }
+
+  .blurb p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+  }
+
+  @media (max-width: 860px) {
+    .blurb-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .blurb-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,137 @@
+---
+---
+<section class="hero section" id="top">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">THEK Digital</p>
+      <h1>FPGA / embedded engineer (UK)</h1>
+      <p class="tagline">
+        Hardware-oriented FPGA work across radar, nuclear, and satellite backgrounds,
+        with a focus on measurement, high-throughput IO, and on-chip compute.
+      </p>
+      <div class="hero-card">
+        <p class="hero-kicker">Hero project</p>
+        <h2>FPGA LLM on ALINX AX7A200B</h2>
+        <p>
+          A compact llama2-style language model (stories15M class, 4-bit weights) running
+          on Artix-7 fabric over PCIe/XDMA. Hardware tests reach about
+          <strong>25–28 tokens per second</strong>.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#projects">See projects</a>
+          <a class="btn btn-ghost" href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-label="Architecture diagram placeholder">
+      <div class="placeholder">
+        <span class="placeholder-label">Placeholder · architecture / Manim</span>
+        <svg class="diagram" viewBox="0 0 480 280" role="img" aria-labelledby="heroDiagTitle">
+          <title id="heroDiagTitle">FPGA LLM data-flow placeholder</title>
+          <rect x="16" y="40" width="110" height="54" rx="10" fill="#1a2533" stroke="#4cc9f0" />
+          <text x="71" y="72" text-anchor="middle" fill="#e8eef6" font-size="13" font-family="Segoe UI, sans-serif">Host / XDMA</text>
+          <path d="M130 67 H170" stroke="#7bdcb5" stroke-width="2" marker-end="url(#arrow)" />
+          <rect x="170" y="40" width="120" height="54" rx="10" fill="#1a2533" stroke="#7bdcb5" />
+          <text x="230" y="72" text-anchor="middle" fill="#e8eef6" font-size="13" font-family="Segoe UI, sans-serif">LLM control</text>
+          <path d="M290 67 H330" stroke="#7bdcb5" stroke-width="2" marker-end="url(#arrow)" />
+          <rect x="330" y="40" width="130" height="54" rx="10" fill="#1a2533" stroke="#4cc9f0" />
+          <text x="395" y="72" text-anchor="middle" fill="#e8eef6" font-size="13" font-family="Segoe UI, sans-serif">Matmul / SRAM</text>
+          <rect x="170" y="150" width="120" height="54" rx="10" fill="#1a2533" stroke="#9aabbf" />
+          <text x="230" y="182" text-anchor="middle" fill="#e8eef6" font-size="13" font-family="Segoe UI, sans-serif">DDR3 (MIG)</text>
+          <path d="M230 94 V150" stroke="#9aabbf" stroke-width="2" marker-end="url(#arrow)" />
+          <text x="240" y="250" text-anchor="middle" fill="#9aabbf" font-size="12" font-family="Segoe UI, sans-serif">
+            Replace with real diagram or Manim export
+          </text>
+          <defs>
+            <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L6,3 L0,6 Z" fill="#7bdcb5" />
+            </marker>
+          </defs>
+        </svg>
+        <p class="placeholder-note">
+          Asset slot: architecture diagram and/or compressed Manim flow video (public copy only).
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding-top: 3.25rem;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .eyebrow {
+    margin: 0 0 0.5rem;
+    color: var(--accent-2);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+  }
+
+  h1 {
+    margin: 0 0 0.75rem;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+  }
+
+  .tagline {
+    margin: 0 0 1.5rem;
+    color: var(--text-muted);
+    max-width: 36rem;
+  }
+
+  .hero-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.35rem 1.4rem;
+    box-shadow: var(--shadow);
+  }
+
+  .hero-kicker {
+    margin: 0 0 0.35rem;
+    color: var(--accent);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .hero-card h2 {
+    margin: 0 0 0.55rem;
+    font-size: 1.25rem;
+  }
+
+  .hero-card p {
+    margin: 0;
+    color: var(--text-muted);
+  }
+
+  .hero-card strong {
+    color: var(--text);
+  }
+
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-top: 1.15rem;
+  }
+
+  @media (max-width: 860px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

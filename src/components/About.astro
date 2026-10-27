@@ -1,0 +1,72 @@
+---
+const skills = [
+  { group: 'HDL / FPGA', items: 'VHDL, Verilog, Vivado block design, timing closure, CDC' },
+  { group: 'Embedded C', items: 'MicroBlaze and host-side drivers, UART bring-up, register maps' },
+  { group: 'Python', items: 'Host tooling, test harnesses, data capture and visualisation' },
+  { group: 'Tools', items: 'Vivado, Vitis, Git, Linux lab workflow' },
+];
+---
+<section class="section" id="about">
+  <div class="container about-grid">
+    <div>
+      <h2 class="section-title">About</h2>
+      <p class="section-lead">
+        THEK Digital Limited is Noel David's UK company for FPGA and embedded engineering.
+        Work spans measurement systems, PCIe datapaths, and on-chip compute, with a bias toward
+        clear architecture and reproducible bring-up.
+      </p>
+    </div>
+    <ul class="skills">
+      {skills.map((s) => (
+        <li>
+          <strong>{s.group}</strong>
+          <span>{s.items}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .skills {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.7rem;
+  }
+
+  .skills li {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 0.85rem 1rem;
+    display: grid;
+    gap: 0.2rem;
+  }
+
+  .skills strong {
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .skills span {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 800px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

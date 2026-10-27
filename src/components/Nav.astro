@@ -1,0 +1,88 @@
+---
+const base = import.meta.env.BASE_URL;
+const links = [
+  { href: '#featured', label: 'Featured' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#about', label: 'About' },
+  { href: '#contact', label: 'Contact' },
+];
+---
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href={`${base}#top`}>THEK Digital</a>
+    <nav aria-label="Primary">
+      <ul>
+        {links.map((l) => (
+          <li><a href={l.href}>{l.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    height: var(--nav-h);
+    backdrop-filter: blur(14px);
+    background: rgba(11, 15, 20, 0.82);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-inner {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .brand {
+    color: var(--text);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+  }
+
+  .brand:hover {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 0.35rem 1rem;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  a {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--text);
+  }
+
+  @media (max-width: 560px) {
+    .brand {
+      font-size: 0.95rem;
+    }
+
+    a {
+      font-size: 0.82rem;
+    }
+
+    ul {
+      gap: 0.25rem 0.7rem;
+    }
+  }
+</style>

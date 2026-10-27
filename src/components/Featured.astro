@@ -1,0 +1,110 @@
+---
+const cards = [
+  {
+    id: 'tdc',
+    title: 'iDelay / TDC',
+    summary:
+      'Arty A7 IDELAY tap-sweep time-to-digital converter with MicroBlaze C tests over UART. A PL-only sibling (arty_tdc) explores the same TDC idea without the soft CPU.',
+    tags: ['Vivado', 'VHDL/Verilog', 'MicroBlaze', 'UART'],
+    diagramTitle: 'TDC tap-sweep placeholder',
+    boxes: [
+      { x: 20, y: 70, w: 100, h: 48, label: 'Input edge' },
+      { x: 150, y: 70, w: 120, h: 48, label: 'IDELAY taps' },
+      { x: 300, y: 70, w: 110, h: 48, label: 'Capture' },
+      { x: 150, y: 160, w: 120, h: 48, label: 'MicroBlaze' },
+    ],
+    note: 'Placeholder diagram. Swap for a sanitized UART test screenshot or block diagram later.',
+  },
+  {
+    id: 'pcie',
+    title: 'PCIe XDMA DAQ',
+    summary:
+      'ALINX AX7A200B PCIe XDMA path for high-throughput DAQ. The live lab viewer stays on the private lab network; this card shows the architecture only.',
+    tags: ['Vivado', 'PCIe', 'XDMA', 'AXIS'],
+    diagramTitle: 'PCIe DAQ path placeholder',
+    boxes: [
+      { x: 16, y: 70, w: 105, h: 48, label: 'sigGenRamp' },
+      { x: 145, y: 70, w: 115, h: 48, label: 'Circular buf' },
+      { x: 285, y: 70, w: 95, h: 48, label: 'AXIS CDC' },
+      { x: 400, y: 70, w: 70, h: 48, label: 'C2H' },
+    ],
+    note: 'Placeholder architecture (sigGenRamp → circular buffer → AXIS CDC → C2H). No lab addresses.',
+  },
+];
+---
+<section class="section" id="featured">
+  <div class="container">
+    <h2 class="section-title">Featured</h2>
+    <p class="section-lead">
+      Two deeper writeups for measurement and throughput work. Diagrams are placeholders until public-safe assets are exported.
+    </p>
+    <div class="featured-grid">
+      {cards.map((card) => (
+        <article class="card" id={card.id}>
+          <h3>{card.title}</h3>
+          <p>{card.summary}</p>
+          <div class="placeholder card-visual">
+            <span class="placeholder-label">Placeholder · diagram</span>
+            <svg class="diagram" viewBox="0 0 480 240" role="img" aria-label={card.diagramTitle}>
+              {card.boxes.map((b) => (
+                <g>
+                  <rect x={b.x} y={b.y} width={b.w} height={b.h} rx="10" fill="#1a2533" stroke="#4cc9f0" />
+                  <text
+                    x={b.x + b.w / 2}
+                    y={b.y + b.h / 2 + 4}
+                    text-anchor="middle"
+                    fill="#e8eef6"
+                    font-size="12"
+                    font-family="Segoe UI, sans-serif"
+                  >
+                    {b.label}
+                  </text>
+                </g>
+              ))}
+            </svg>
+            <p class="placeholder-note">{card.note}</p>
+          </div>
+          <div class="tag-row">
+            {card.tags.map((t) => <span class="tag">{t}</span>)}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .featured-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    box-shadow: var(--shadow);
+  }
+
+  .card h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  .card > p {
+    margin: 0 0 1rem;
+    color: var(--text-muted);
+  }
+
+  .card-visual {
+    min-height: 210px;
+  }
+
+  @media (max-width: 800px) {
+    .featured-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
