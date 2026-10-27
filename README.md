@@ -24,9 +24,9 @@ npm run preview
 
 Single long homepage with sticky nav:
 
-1. **Hero** — FPGA LLM on ALINX AX7A200B (Artix-7), ~25–28 tok/s proof point
-2. **Featured** — iDelay/TDC and PCIe XDMA DAQ cards
-3. **Projects** — one-line blurbs
+1. **Hero**  -  FPGA LLM on ALINX AX7A200B (Artix-7), ~25–28 tok/s proof point
+2. **Featured**  -  iDelay/TDC and PCIe XDMA DAQ cards
+3. **Projects**  -  one-line blurbs
 4. **About** / **Contact**
 
 Diagram and Manim slots under `public/placeholders/` are clearly marked for real assets later.
